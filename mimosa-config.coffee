@@ -5,7 +5,7 @@
 exports.config = {
 
   # we use these mimosa modules
-  modules: ['bower', 'lint', 'minify', 'server', 'live-reload', 'testem-simple']
+  modules: ['bower', 'lint', 'minify', 'server', 'live-reload']
 
   # limit file watcher to 100 simultaneously open file handlers at a time -- since the files are processed
   # asynchronously, without this option file processing could otherwise open all the files at essentially
