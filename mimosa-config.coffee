@@ -16,7 +16,6 @@ exports.config = {
   # enable coffeescript with sourcemap support and compile all coffeescript files with the default function wrapper
   # (mimosa default is bare:true because that is best if you are using requirejs -- this project does not use requirejs however)
   coffeescript:
-    sourceMap:true
     bare:false
 
   # don't wrap generated templates in amd modules, output ember compatible pre-compiled tempalates to compiled-handlebars.js and compiled-emblem-js
@@ -43,20 +42,9 @@ exports.config = {
       ember:
         enabled: true
 
-  # this disables linting or any mimosa processing of the vendor files
-  justCopy:
-    paths:["javascripts/vendor"]
-
-  # configures mimosa bower module to place any bower installed assets in 
+  # configures mimosa bower module to place any bower installed assets in
   # assets/javascripts/vendor/bower_assets/{package_name}/{} or assets/stylesheets/vendor/bower_assets/{package_name}/{}
   bower:
     copy:
       outRoot: "bower-assets"
-
-  # sets up a simple express server with support for jade templates
-  server:
-    views:
-      compileWith: 'jade'
-      extension: 'jade'
-      path: 'views'
 }
