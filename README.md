@@ -83,8 +83,8 @@ all tests automatically rerun on all connected browsers when files in ./public c
 All the included tests should pass after project checkout, please report an issue if you notice
 otherwise.
 
-Overview of the file structure (see mimosajs.org for more mimosa details)
--------------------------------------------------------------------------
+Overview of the file structure
+------------------------------
 
 <dl>
 <dt>mimosa-config.coffee</dt>
