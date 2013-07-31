@@ -48,6 +48,4 @@ exports.config = {
     copy:
       outRoot: "bower-assets"
 
-  testemSimple:
-    configFile: "./public/testem.json"
 }
