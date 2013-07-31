@@ -51,7 +51,7 @@ exports.config = {
   # assets/javascripts/vendor/bower_assets/{package_name}/{} or assets/stylesheets/vendor/bower_assets/{package_name}/{}
   bower:
     copy:
-      outRoot: "bower_assets"
+      outRoot: "bower-assets"
 
   # sets up a simple express server with support for jade templates
   server:
