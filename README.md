@@ -47,14 +47,16 @@ How to Run
 This runs mimosa in watch mode and starts up the project's nodejs server with live-reload
 support.
 
-The ./assets directory will be watched for changes -- processed versions of the source assets
-are placed into ./public.  When a change is made to the contents of the assets directory, the
+This processes the contents of the ./assets directory, placing compiled/processed
+representations into the ./public directory.
+
+The ./assets directory is watched for changes -- when a change is made to the contents of the assets directory, the
 relevant files are recompiled automatically.
 
-The --server option will start an expressjs http server listening at http://localhost:3000.
+The --server option fires up an expressjs http server listening at http://localhost:3000.
 When assets are recompiled, the server will send any connected browsers a socketio message
-telling them to reload -- to support this the author need only ensure that the html page
-loads the /reload-client.js script.
+telling them to reload -- the javascript at /reload-client.js adds support for this to the
+browser page.
 
 How to run tests
 ----------------
