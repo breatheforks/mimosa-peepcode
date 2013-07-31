@@ -1,0 +1,9 @@
+{
+  "name": "vendor",
+  "version": "0.0.0",
+  "dependencies": {
+    "ember": ">=1.x.x",
+    "emblem": ">= 0.3.0",
+    "ember-model": "~0.0.7"
+  }
+}

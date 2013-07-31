@@ -1,0 +1,13 @@
+{
+  "name": "emblem",
+  "homepage": "https://github.com/machty/emblem.js",
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.0",
+    "commit": "f976f38e9c06fc4fb30cd564a52c2e0f20710a46"
+  },
+  "_source": "git://github.com/machty/emblem.js.git",
+  "_target": ">= 0.3.0"
+}

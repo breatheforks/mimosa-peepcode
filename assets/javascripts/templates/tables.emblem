@@ -1,0 +1,9 @@
+.tables
+    .row
+        .small-4.columns.tableMenu
+            h2 Tables
+            each table in controller
+                linkTo "table" table class="panel small-6 columns"
+                    =table.id
+        .small-8.columns
+            =outlet

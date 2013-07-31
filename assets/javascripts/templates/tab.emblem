@@ -1,0 +1,14 @@
+.tab
+    h2 Table <span>{{id}}</span>
+
+    ul
+        each tabItem in model.tabItems
+            li
+                h3
+                    | {{tabItem.food.name}}<span>${{money tabItem.cents}}</span>
+        else
+            li
+                h3
+                    | Click a food to add it
+        li.total
+            h3 Total <span>${{money model.cents}}</span>

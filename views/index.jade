@@ -1,0 +1,24 @@
+doctype 5
+html
+    head
+        title= dryit
+        link(rel='stylesheet', href='stylesheets/vendor/foundation/foundation.css')
+        link(rel='stylesheet', href='stylesheets/style.css')
+
+    body
+        if reload
+            script(src='socket.io/socket.io.js')
+            script(src='javascripts/reload-client.js')
+
+        script(src='javascripts/vendor/ember-starter-kit/jquery-1.9.1.js')
+        script(src='javascripts/vendor/ember-starter-kit/handlebars-1.0.0-rc.4.js')
+        script(src='javascripts/vendor/ember-starter-kit/ember-1.0.0-rc.6.js')
+        script(src='javascripts/vendor/bower_assets/ember-model/ember-model.js')
+
+        script(src='javascripts/app/handlebars-helpers.js')
+
+        //script(src='javascripts/compiled-handlebars.js')
+        script(src='javascripts/compiled-emblem.js')
+
+        script(src='javascripts/app/app.js')
+        script(src='javascripts/app/models.js')

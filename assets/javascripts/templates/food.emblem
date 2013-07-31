@@ -1,0 +1,7 @@
+.food
+    ul.menu
+        each controller
+            li
+                a{action "addFood" this} href='#'
+                    img src=imageUrl
+                    p {{name}}

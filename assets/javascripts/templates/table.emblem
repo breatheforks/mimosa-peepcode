@@ -1,0 +1,5 @@
+.row
+    .small-3.columns
+        render "food"
+    .small-9.columns.
+        render "tab" tab
