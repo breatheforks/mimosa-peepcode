@@ -5,7 +5,7 @@
 exports.config = {
 
   # we use these mimosa modules
-  modules: ['bower', 'lint', 'minify', 'server', 'live-reload']
+  modules: ['bower', 'lint', 'minify', 'server', 'live-reload', 'testem-simple']
 
   # limit file watcher to 100 simultaneously open file handlers at a time -- since the files are processed
   # asynchronously, without this option file processing could otherwise open all the files at essentially
@@ -19,7 +19,7 @@ exports.config = {
     bare:false
 
   # don't wrap generated templates in amd modules, output ember compatible pre-compiled tempalates to compiled-handlebars.js and compiled-emblem-js
-  # These files just add the expected template functions to the Ember.Templates[] so that Ember template discovery functions normally
+  # These files just add the expected template functions to the Ember.TEMPLATES array so that Ember template discovery functions normally
   template:
     amdWrap: false
 
@@ -47,4 +47,7 @@ exports.config = {
   bower:
     copy:
       outRoot: "bower-assets"
+
+  testemSimple:
+    configFile: "./public/testem.json"
 }
