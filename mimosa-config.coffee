@@ -2,10 +2,10 @@
 # the below values are the only things changed from default -- comments describing the behavior of all fields
 # and the default settings are located in mimosa-config-comments.coffee
 
-exports.config = {
+exports.config =
 
   # we use these mimosa modules
-  modules: ['bower', 'lint', 'minify', 'server', 'live-reload']
+  modules: ['bower', 'lint', 'minify', 'server', 'live-reload', 'testem-simple']
 
   # limit file watcher to 100 simultaneously open file handlers at a time -- since the files are processed
   # asynchronously, without this option file processing could otherwise open all the files at essentially
@@ -21,6 +21,12 @@ exports.config = {
   # don't wrap generated templates in amd modules, output ember compatible pre-compiled tempalates to compiled-handlebars.js and compiled-emblem-js
   # These files just add the expected template functions to the Ember.TEMPLATES array so that Ember template discovery functions normally
   template:
+
+    # fixing usage of emblem to a single version so mimosa upgrades to break
+    # allows for upgrading at own pace
+    emblem:
+      lib: require('emblem')
+
     amdWrap: false
 
     # this section will configure the template compiler to precompile any .hbs and .emblem templates within the assets/javascripts/templates/ directory
@@ -31,9 +37,8 @@ exports.config = {
         return m[1]
       path = path.split '/'
       return path[path.length - 1]
-  
+
     outputFileName:
-      handlebars:"compiled-handlebars"
       emblem:"compiled-emblem"
 
     handlebars:
@@ -47,5 +52,3 @@ exports.config = {
   bower:
     copy:
       outRoot: "bower-assets"
-
-}
