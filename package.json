@@ -22,6 +22,6 @@
 
     "devDependencies": {
         "mimosa-bower": ">=0.6.0",
-        "mimisa-testem-simple": "0.5.1"
+        "mimosa-testem-simple": "0.5.2"
     }
 }
