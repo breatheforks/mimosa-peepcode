@@ -6,22 +6,22 @@
     "description": "dryit",
     "contributors": [
         {
-            "name": "",
-            "email": ""
+            "name": "N. Ben Cohen",
+            "email": "ncohen@ucsd.edu"
         }
     ],
     "private": true,
     "dependencies": {
         "consolidate": "~0.8.0",
         "coffee-script": "~1.6.2",
-        "handlebars": ">=1.0.12",
+        "handlebars": "1.0.12",
         "express": "~3.1.0",
         "jade": "~0.31.2",
-        "emblem":""
+        "emblem":"0.3.0"
     },
 
     "devDependencies": {
-        "mimosa-just-copy": ">=0.1.0",
-        "mimosa-bower": ">=0.6.0"
+        "mimosa-bower": ">=0.6.0",
+        "mimisa-testem-simple": "0.5.1"
     }
 }
