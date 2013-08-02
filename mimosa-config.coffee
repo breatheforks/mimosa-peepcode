@@ -4,6 +4,8 @@
 
 exports.config =
 
+  minMimosaVersion:null
+
   # we use these mimosa modules
   modules: ['bower', 'lint', 'minify', 'server', 'live-reload', 'testem-simple']
 
