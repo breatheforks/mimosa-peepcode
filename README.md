@@ -63,22 +63,18 @@ How to run tests
 
 1. Install testem globally
 
-        npm install -g testem
+        npm install -g testem phantomjs
 
-2. Start mimosa
+2. Start mimosa -- results from the testsuite (run headlessly inside phantomjs) will be displayed on every project save
 
         mimosa watch --server
 
-3. Then in another terminal, start testem
+3. You can also run the tests via testem (launch/connect multiple browsers, run tests in them all as slaves -- its great, check out the testem project for more details!)
 
-        cd ./public
         testem
 
-This fires up testem which starts an http server listening at http://localhost:7357
-by default.
+4. Finally, if you are just getting started with understanding the test suite, you can run it directly -- point your browser at http://localhost:3000/testrunner.html
 
-Connect any browser(s) to the testem http server port and watch the tests run.  You should see
-all tests automatically rerun on all connected browsers when files in ./public change.
 
 All the included tests should pass after project checkout, please report an issue if you notice
 otherwise.
