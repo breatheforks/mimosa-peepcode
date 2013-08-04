@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "ember": ">=1.x.x",
-    "ember-model": "~0.0.7"
+    "ember-model": "~0.0.7",
+    "handlebars": "1.0.0"
   }
 }
