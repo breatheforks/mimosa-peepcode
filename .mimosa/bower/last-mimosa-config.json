@@ -10,6 +10,7 @@
     "outRoot": "bower-assets",
     "defaultStrategy": "packageRoot",
     "strategy": {},
+    "forceLatest": true,
     "exclude": [],
     "overridesArrays": {},
     "overridesObjects": {},
