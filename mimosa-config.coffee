@@ -51,6 +51,8 @@ exports.config =
 
   # configures mimosa bower module to place any bower installed assets in
   # assets/javascripts/vendor/bower_assets/{package_name}/{} or assets/stylesheets/vendor/bower_assets/{package_name}/{}
+  # forceLatest used to handle version issue between handlebars and ember
   bower:
     copy:
       outRoot: "bower-assets"
+      forceLatest: true
