@@ -56,3 +56,4 @@ exports.config =
     copy:
       outRoot: "bower-assets"
       forceLatest: true
+      exclude:["ember/ember.js"]

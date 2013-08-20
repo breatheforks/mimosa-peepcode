@@ -2,8 +2,10 @@
   "name": "vendor",
   "version": "0.0.0",
   "dependencies": {
-    "ember": ">=1.x.x",
+    "requirejs": "2.1.8",
+    "ember-shim": "1.0.0-rc.7",
     "ember-model": "~0.0.7",
+    "jquery": "2.0.3",
     "handlebars": "1.0.0"
   }
 }

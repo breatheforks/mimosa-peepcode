@@ -11,10 +11,12 @@
     "defaultStrategy": "packageRoot",
     "strategy": {},
     "forceLatest": true,
-    "exclude": [],
+    "exclude": [
+      "/Users/dbashford/mygithub/mimosa-peepcode/.mimosa/bower/bower_components/ember/ember.js"
+    ],
     "overridesArrays": {},
     "overridesObjects": {},
     "mainOverrides": {},
-    "pathMod": {}
+    "pathMod": null
   }
 }
