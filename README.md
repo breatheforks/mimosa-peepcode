@@ -1,8 +1,8 @@
 This is a port of the peepcode Ordr app from the [peepcode ember
-screencast][1] into a [mimosajs][2] project.
+screencast][1] into a [mimosa][2] project.
 
 [1]:https://peepcode.com/products/emberjs
-[2]:http://mimosajs.com
+[2]:http://mimosa.io
 [3]:https://github.com/airportyh/testem
 [4]:http://qunitjs.com
 [5]:https://github.com/mmonteleone/pavlov
@@ -21,9 +21,9 @@ manual downloads of the emberjs-starter-kit and handlerbars-1.0.0
 How to install
 --------------
 
-1. Install mimosajs globally
+1. Install mimosa globally
 
-        npm install -g mimosajs
+        npm install -g mimosa
 
 2. Clone the mimosa-ordr-skeleton project
 
