@@ -4,7 +4,7 @@
 
 exports.config =
 
-  minMimosaVersion: "0.14.5"
+  minMimosaVersion: "1.0.0"
 
   # we use these mimosa modules
   modules: ['bower', 'lint', 'minify', 'server', 'live-reload', 'testem-simple']
@@ -20,15 +20,15 @@ exports.config =
   coffeescript:
     bare:false
 
+  # Provide specific versions of emblem and handleabars
+  compilers:
+    libs:
+      emblem: require('emblem')
+      handlebars: require('handlebars')
+
   # don't wrap generated templates in amd modules, output ember compatible pre-compiled tempalates to compiled-handlebars.js and compiled-emblem-js
   # These files just add the expected template functions to the Ember.TEMPLATES array so that Ember template discovery functions normally
   template:
-
-    # fixing usage of emblem to a single version so mimosa upgrades to break
-    # allows for upgrading at own pace
-    emblem:
-      lib: require('emblem')
-
     amdWrap: false
 
     # this section will configure the template compiler to precompile any .hbs and .emblem templates within the assets/javascripts/templates/ directory
@@ -44,7 +44,6 @@ exports.config =
       emblem:"compiled-emblem"
 
     handlebars:
-      lib: require('handlebars')
       helpers:["app/handlebars-helpers"]
       ember:
         enabled: true
