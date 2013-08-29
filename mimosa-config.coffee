@@ -41,7 +41,7 @@ exports.config =
       return path[path.length - 1]
 
     outputFileName:
-      emblem:"compiled-emblem"
+      emblem:"javascripts/compiled-emblem"
 
     handlebars:
       helpers:["app/handlebars-helpers"]
