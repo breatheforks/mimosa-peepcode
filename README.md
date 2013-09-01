@@ -9,9 +9,7 @@ screencast][1] into a [mimosa][2] project.
 [6]:https://github.com/Ember-SC/peepcode-ordr-test/
 [7]:http://bower.io/
 
-It's written in coffeescript, stylus, emblem, and statically compiled jade (for the index.html and testrunner.html files).
-
-There is a [testem][3] testsuite written
+The app is written in coffeescript, stylus, emblem, and statically compiled jade.  It includes a [testem][3] testsuite written
 in [qunit][4] and [pavlov][5].  The test
 suite is directly stolen from [here][6].
 
