@@ -26,7 +26,8 @@ exports.startServer = (config, callback) ->
   app.configure 'development', ->
     app.use express.errorHandler()
 
-  app.get '/', routes.index(config)
+  # set up your express server routes here!
+  app.get '/example', routes.index(config)
 
   callback(server)
 

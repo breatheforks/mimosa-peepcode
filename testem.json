@@ -1,5 +1,5 @@
 {
-  "test_page": "assets/testrunner.html",
+  "test_page": "public/testrunner.html",
   "routes": {
     "/test": "public/"
   },

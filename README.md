@@ -9,14 +9,13 @@ screencast][1] into a [mimosa][2] project.
 [6]:https://github.com/Ember-SC/peepcode-ordr-test/
 [7]:http://bower.io/
 
-It's written in coffeescript, stylus, emblem, (and jade for the index.html -- but note that
-this could easily be re-written to static html if desired).  There is a [testem][3] testsuite written
+It's written in coffeescript, stylus, emblem, and statically compiled jade (for the index.html and testrunner.html files).
+
+There is a [testem][3] testsuite written
 in [qunit][4] and [pavlov][5].  The test
 suite is directly stolen from [here][6].
 
-The intention is for all the 'front-end' assets to be downloaded via [bower][7], however the current
-versions of emberjs and dependencies available on bower are out of date, so for now the project includes
-manual downloads of the emberjs-starter-kit and handlerbars-1.0.0
+The front-end javascript assets are downloaded via [bower][7].
 
 How to install
 --------------
@@ -25,18 +24,18 @@ How to install
 
         npm install -g mimosa
 
-2. Clone the mimosa-ordr-skeleton project
+2. Clone the mimosa-peepcode project from github or run:
 
-        git clone ..
+        mimosa skel:new ember-peepcode
 
 3. Install the build/server dependencies
 
-        cd mimosa-peepcode
+        cd ember-peepcode
         npm install
 
 4. Install the front-end dependencies
 
-        cd mimosa-ordr-skeleton
+        cd ember-peepcode
         mimosa bower
 
 How to Run
@@ -47,16 +46,16 @@ How to Run
 This runs mimosa in watch mode and starts up the project's nodejs server with live-reload
 support.
 
-This processes the contents of the ./assets directory, placing compiled/processed
-representations into the ./public directory.
+The contents of the ./assets directory are processed by mimosa with compiled or otherwise processed
+representations placed into the ./public directory.
 
 The ./assets directory is watched for changes -- when a change is made to the contents of the assets directory, the
 relevant files are recompiled automatically.
 
 The --server option fires up an expressjs http server listening at http://localhost:3000.
 When assets are recompiled, the server will send any connected browsers a socketio message
-telling them to reload -- the javascript at /reload-client.js adds support for this to the
-browser page.
+telling them to reload -- the javascript available from the embedded webserver at /reload-client.js adds support for
+this to the browser page.
 
 How to run tests
 ----------------
@@ -73,7 +72,7 @@ How to run tests
 
         testem
 
-4. Finally, if you are just getting started with understanding the test suite, you can run it directly -- point your browser at http://localhost:3000/testrunner.html
+4. Finally, if you are just getting started with understanding the test suite, you can run the testsuite directly -- point your browser at http://localhost:3000/testrunner.html
 
 
 All the included tests should pass after project checkout, please report an issue if you notice
@@ -99,20 +98,28 @@ which preprocessor/compiler/mimosa module[s] is/are applied to the input file[s]
 </dd>
 
 <dt>./public</dt>
-<dd>the output produced by the mimosa build process these are the artifacts that
+<dd>the output produced by the mimosa build process.  These are the artifacts that
 should get served to the browser</dd>
 
 <dt>server.coffee</dt>
 <dd>starts a a basic expressjs server (note the default createServer method)</dd>
 
 <dt>./routes</dt>
-<dd>express routes -- the default just renders the index.jade view</dd>
+<dd>express routes -- nothing in the default</dd>
 
 <dt>./views</dt>
-<dd>any express views -- automatically compiled by consolidate module from npm</dd>
+<dd>any express views -- default express server allows views written in any template language supported by the consolidate module from npm</dd>
 
 <dt>bower.json</dt>
-<dd>configuration file for bower frontend package manager </dd>
+<dd>configuration file for bower frontend package manager</dd>
+
+<dt>./assets/index.html.jade</dt>
+<dd>Jade html template which loads the application.  This template is statically compiled by mimosa's client-jade-static module.  It produces the file at public/index.html which loads the application.
+</dd>
+
+<dt>./assets/testrunner.html.jade</dt>
+<dd>Jade html template which loads the test suite.  This template is statically compiled by mimosa's client-jade-static module.  It produces the file at public/testrunner.html which loads the testsuite.
+</dd>
 
 <dt>./assets/stylesheets</dt>
 <dd>Stylesheets (can be written in stylus, sass, or css)</dd>
