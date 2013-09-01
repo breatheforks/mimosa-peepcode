@@ -2,11 +2,12 @@ doctype 5
 html
 block vars
     - var title="mimosa-ember-peepcode!"
-    - var testing=false
+    - var isTestSuite=false
+    - var reload=true
 head
     title #{title}
 
-    if testing
+    if isTestSuite
         link(rel='stylesheet', href='./stylesheets/vendor/qunit-1.11.0.css')
         style(type="text/css").
             #qunit-fixture, #app-root {
@@ -21,7 +22,7 @@ head
     link(rel='stylesheet', href='stylesheets/style.css')
 
 body
-    if testing
+    if isTestSuite
         div(id="qunit")
         div(id="qunit-fixture")
 
@@ -42,7 +43,7 @@ body
     script(src='javascripts/vendor/bower-assets/ember-shim/ember.js')
     script(src='javascripts/vendor/bower-assets/ember-model/ember-model.js')
 
-    if testing
+    if isTestSuite
         // methods which should be available within the test cases for writing tests
         script(src="./javascripts/testing/support/test_helper.js")
 
@@ -56,7 +57,7 @@ body
     script(src='javascripts/app/app.js')
     script(src='javascripts/app/models.js')
 
-    if testing
+    if isTestSuite
         // test environment code which should run after application is imported
         script(src="javascripts/testing/support/after_app.js")
 
