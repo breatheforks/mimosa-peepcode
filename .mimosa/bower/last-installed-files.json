@@ -1,8 +1,8 @@
 [
-  "assets/javascripts/vendor/bower-assets/ember-shim/ember.js",
-  "assets/javascripts/vendor/bower-assets/ember-model/ember-model.js",
   "assets/javascripts/vendor/bower-assets/handlebars/handlebars.js",
   "assets/javascripts/vendor/bower-assets/handlebars/handlebars.runtime.js",
   "assets/javascripts/vendor/bower-assets/jquery/jquery.js",
-  "assets/javascripts/vendor/bower-assets/requirejs/require.js"
+  "assets/javascripts/vendor/bower-assets/requirejs/require.js",
+  "assets/javascripts/vendor/bower-assets/ember-model/ember-model.js",
+  "assets/javascripts/vendor/bower-assets/ember-shim/ember.js"
 ]
