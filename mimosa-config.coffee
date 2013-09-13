@@ -29,7 +29,7 @@ exports.config =
   # don't wrap generated templates in amd modules, output ember compatible pre-compiled tempalates to compiled-handlebars.js and compiled-emblem-js
   # These files just add the expected template functions to the Ember.TEMPLATES array so that Ember template discovery functions normally
   template:
-    amdWrap: false
+    wrapType: "none"
 
     # this section will configure the template compiler to precompile any .hbs and .emblem templates within the assets/javascripts/templates/ directory
     # with the correct 'name' -- so a template at templates/somedir/foo.emblem will map to the ember template 'somedir/foo'
@@ -54,5 +54,4 @@ exports.config =
   bower:
     copy:
       outRoot: "bower-assets"
-      forceLatest: true
       exclude:["ember/ember.js"]

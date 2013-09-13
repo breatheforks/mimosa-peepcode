@@ -1,4 +1,5 @@
 {
+  "watch": true,
   "bowerDir": {
     "path": ".mimosa/bower/bower_components",
     "clean": true,
@@ -11,12 +12,10 @@
     "defaultStrategy": "packageRoot",
     "strategy": {},
     "forceLatest": true,
-    "exclude": [
-      "/Users/ncohen/software/experiments/mimosa-peepcode/.mimosa/bower/bower_components/ember/ember.js"
-    ],
+    "exclude": [],
     "overridesArrays": {},
     "overridesObjects": {},
     "mainOverrides": {},
-    "pathMod": {}
+    "pathMod": null
   }
 }
