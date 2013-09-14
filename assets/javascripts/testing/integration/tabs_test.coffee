@@ -19,11 +19,13 @@ pavlov.specify "Ordr App integration tests", () ->
           .then () ->
             assert(find('.tab li:eq(0) > h3' ).text() ).equals( 'Pizza$15.00' )
             assert(find('.total span').text() ).equals( '$15.00' )
-            visit('/tables/3').then () ->
-              assert(find('.tab h2 span').text()).equals('3')
-              visit('/tables/1').then () ->
-                assert( find('.tab li:eq(0) > h3').text() ).equals( 'Pizza$15.00' )
-                resume()
+            visit('/tables/3')
+              .then () ->
+                assert(find('.tab h2 span').text()).equals('3')
+                visit('/tables/1')
+                  .then () ->
+                    assert( find('.tab li:eq(0) > h3').text() ).equals( 'Pizza$15.00' )
+                    resume()
 
     describe "Table 4", () ->
 
