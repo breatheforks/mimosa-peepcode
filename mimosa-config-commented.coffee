@@ -11,19 +11,16 @@
 
 exports.config = {
 
-  # minMimosaVersion:null   # The minimum Mimosa version that must be installed to use the
-                            # project. Defaults to null, which means Mimosa will not check
-                            # the version.  This is a no-nonsense way for big teams to ensure
-                            # everyone stays up to date with the blessed Mimosa version for a
-                            # project.
+  # minMimosaVersion:null      # The minimum Mimosa version that must be installed to use the project.
+  # requiredMimosaVersion:null # The Mimosa version that must be installed to use the project.
 
   ###
-  The list of Mimosa modules to use for this application. The defaults (lint, server, require,
-  minify, live-reload, bower) come bundled with Mimosa and do not need to be installed. The
-  'mimosa-' that preceeds all Mimosa module names is assumed, however you can use it if you
+  The list of Mimosa modules to use for this application. The defaults (jshint, csslint, server,
+  require, minify, live-reload, bower) come bundled with Mimosa and do not need to be installed.
+  The 'mimosa-' that preceeds all Mimosa module names is assumed, however you can use it if you
   want. If a module is listed here that Mimosa is unaware of, Mimosa will attempt to install it.
   ###
-  # modules: ['lint', 'server', 'require', 'minify', 'live-reload', 'bower']
+  # modules: ['jshint', 'csslint', 'server', 'require', 'minify', 'live-reload', 'bower']
 
   # watch:
     # sourceDir: "assets"                # directory location of web assets, can be relative to
@@ -219,34 +216,33 @@ exports.config = {
                                 # like jquery.min.js, is assumed to already be minified and is
                                 # ignored by default. Paths can be relative to the
                                 # watch.compiledDir, or absolute.  Paths are to compiled files,
-                                # so '.js' rather than '.coffee'	
-
-  # lint:                      # settings for js, css linting/hinting
-    # exclude:[]               # array of strings or regexes that match files to not lint,
-                               # strings are paths that can be relative to the watch.compiledDir
+                                # so '.js' rather than '.coffee'
+  # jshint:                    # settings for javascript hinting
+    # exclude:[]               # array of strings or regexes that match files to not jshint,
+                               # strings are paths that can be relative to the watch.sourceDir
                                # or absolute
-    # compiled:                # settings for compiled files
-      # javascript:true        # fire jshint on successful compile of meta-language to javascript
-      # css:true               # fire csslint on successful compile of meta-language to css
-    # copied:                  # settings for copied files, files already in .css and .js files
-      # javascript: true       # fire jshint for copied javascript files
-      # css: true              # fire csslint for copied css files
-    # vendor:                  # settings for vendor files
-      # javascript: false      # fire jshint for copied vendor javascript files (like jquery)
-      # css: false             # fire csslint for copied vendor css files (like bootstrap)
-    # rules:                   # All hints/lints come with defaults built in.  Here is where
-                               # you'd override those defaults. Below is listed an example of an
-                               # overridden default for each lint type, also listed, next to the
-                               # lint types is the url to find the settings for overriding.
-      # jshintrc: ".jshintrc"  # This is the path, either relative to the root of the project or
+    # compiled: true           # fire jshint on successful compile of meta-language to javascript
+    # copied: true             # fire jshint for copied javascript files
+    # vendor: false            # fire jshint for copied vendor javascript files (like jquery)
+    # jshintrc: ".jshintrc"    # This is the path, either relative to the root of the project or
                                # absolute, to a .jshintrc file. By default mimosa will look at
                                # the root of the project for this file. The file does not need to
                                # be present. If it is present, it must be valid JSON.
-      # javascript:            # Settings: http://www.jshint.com/options/, these settings will
+    # rules:                   # Settings: http://www.jshint.com/options/, these settings will
                                # override any settings set up in the jshintrc
-        # plusplus: true       # This is an example override, this is not a default
-      # css:                   # Settings: https://github.com/stubbornella/csslint/wiki/Rules
-        # floats: false        # This is an example override, this is not a default	
+      # plusplus: true         # This is an example override, this is not a default
+
+  # csslint:                    # settings for javascript hinting
+    # exclude:[]               # array of strings or regexes that match files to not csslint,
+                               # strings are paths that can be relative to the watch.sourceDir
+                               # or absolute
+    # compiled: true           # fire csslint on successful compile of meta-language to javascript
+    # copied: true             # fire csslint for copied javascript files
+    # vendor: false            # fire csslint for copied vendor javascript files (like jquery)
+    # rules:                   # Settings: http://www.csslint.com/options/, these settings will
+                               # override any settings set up in the csslintrc
+      # floats: false          # This is an example override, this is not a default
+	
 
   # liveReload:                   # Configuration for live-reload
     # enabled:true                # Whether or not live-reload is enabled
@@ -274,7 +270,7 @@ exports.config = {
                              # system so that from one mimosa run to another it can persist the
                              # important information and not need the entire application to be
                              # rebuilt
-      # enabled: false       # whether or not tracking is enabled
+      # enabled: true       # whether or not tracking is enabled
       # path: ".mimosa/require/tracking.json" # the path to the tracking file relative to the
                              # root of the project.
     # verify:                # settings for requirejs path verification
@@ -285,6 +281,13 @@ exports.config = {
                              # provide your config in the overrides section. See here
                              # https://github.com/dbashford/mimosa#requirejs-optimizer-defaults
                              # to see what the defaults are.
+      # modules:             # If using a modules config, place it here. mimosa-require will use
+                             # the modules config directly, but also base many other r.js config
+                             # options based on a modules setup instead of a single file setup.
+      # moduleCachingPath: ".mimosa/require/moduleCaching" # Only valid if using modules. This
+                             # path is where pristine root module files are kept in between r.js
+                             # runs. This cache allows you to keep "mimosa watch" running while
+                             # building and rebuilding your application.
       # overrides:           # Optimization configuration and Mimosa overrides. If you need to
                              # make tweaks uncomment this line and add the r.js config
                              # (http://requirejs.org/docs/optimization.html#options) as new
@@ -322,6 +325,9 @@ exports.config = {
       # exclude:[]                # An array of string paths or regexes. Files to exclude from
                                   # copying. Paths should be relative to the bowerdir.path or
                                   # absolute.
+      # unknownMainFullCopy: false # When set to true, any bower package that does not have main
+                                  # files configured in its bower.json will have its entire
+                                  # folder contents copied in.
       # mainOverrides: {}         # Occasionally bower packages do not clearly indicate what file
                                   # is the main library file. In those cases, mimosa cannot find
                                   # the main files to copy them to the vendor directory. json2 is
@@ -359,5 +365,23 @@ exports.config = {
                                   # ['js', 'lib'] the output path would have "lib" and "js"
                                   # stripped. Feel free to suggest additions to this based on
                                   # your experience!
+	
 
+  # clientJadeStatic:                     # settings for the client-jade-static module
+    # context:{}                          # An object of data to be passed into jade compilation.
+                                          # Use this to define the values for any variables that
+                                          # may be in the .html.jade files. Make this object as
+                                          # big as it needs to be to satisfy the needs of your
+                                          # jade files.
+    # outputExtension: '.html'            # The extension to use for files output by jade
+                                          # compilation.
+    # extensionRegex: /.html.[a-zA-Z]+$/  # The regex to use to match jade files to be compiled
+                                          # Files must still end in .jade or in whatever the
+                                          # compiler override is for the jade compiler.
+    # prettyOutput: false                 # Indicates if the Jade compiler should output 
+                                          # pretty-indentation whitespace	
+
+  # testemSimple:               # Configuration for the testem-simple module
+    # configFile: "testem.json" # path from the root of the mimosa application to the testem
+                                # config file.
 }
