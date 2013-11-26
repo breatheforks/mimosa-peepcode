@@ -13,6 +13,7 @@
     "strategy": {},
     "forceLatest": true,
     "exclude": [],
+    "unknownMainFullCopy": false,
     "overridesArrays": {},
     "overridesObjects": {},
     "mainOverrides": {},

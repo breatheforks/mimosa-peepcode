@@ -4,10 +4,10 @@
 
 exports.config =
 
-  minMimosaVersion: "1.0.0"
+  minMimosaVersion: "1.1.0"
 
   # we use these mimosa modules
-  modules: ['bower', 'lint', 'minify', 'server', 'live-reload', 'testem-simple', 'client-jade-static']
+  modules: ['bower', 'jshint', 'csslint', 'minify', 'server', 'live-reload', 'testem-simple', 'client-jade-static']
 
   # limit file watcher to 100 simultaneously open file handlers at a time -- since the files are processed
   # asynchronously, without this option file processing could otherwise open all the files at essentially
