@@ -55,7 +55,7 @@ exports.config = {
                                          # javascript assets. Unix style slashes please.
     # stylesheets: "stylesheets/vendor"  # location, relative to the watch.sourceDir, of vendor
                                          # stylesheet assets. Unix style slashes please.
-	
+
 
   # compilers:
     # extensionOverrides:       # A list of extension overrides, format is:
@@ -173,7 +173,7 @@ exports.config = {
   # the extensions of files to copy from sourceDir to compiledDir. vendor js/css, images, etc.
   ###
   # copy:
-    # extensions: ["js","css","png","jpg","jpeg","gif","html","eot","svg","ttf","woff","otf","yaml","kml","ico","htc","htm","json","txt","xml","xsd","map","md"]	
+    # extensions: ["js","css","png","jpg","jpeg","gif","html","eot","svg","ttf","woff","otf","yaml","kml","ico","htc","htm","json","txt","xml","xsd","map","md"]
 
   # growl:
     # onStartup: false       # Controls whether or not to Growl when assets successfully
@@ -186,7 +186,7 @@ exports.config = {
       # javascript: true     # growl on successful compilation? will always send on failure
       # css: true            # growl on successful compilation? will always send on failure
       # template: true       # growl on successful compilation? will always send on failure
-      # copy: true           # growl on successful copy?	
+      # copy: true           # growl on successful copy?
 
   # server:                      # configuration for server when server option is enabled via CLI
     # defaultServer:
@@ -207,7 +207,7 @@ exports.config = {
       # path: 'views'            # This is the path to project views, it can be absolute or
                                  # relative. If defaultServer.enabled is true, it is relative to the
                                  # root of the project. If defaultServer.enabled is false it is
-                                 # relative to the server.path setting above.	
+                                 # relative to the server.path setting above.
 
   # minify:                     # Configuration for non-require minification/compression via
                                 # uglify using the --minify flag.
@@ -242,14 +242,14 @@ exports.config = {
     # rules:                   # Settings: http://www.csslint.com/options/, these settings will
                                # override any settings set up in the csslintrc
       # floats: false          # This is an example override, this is not a default
-	
+
 
   # liveReload:                   # Configuration for live-reload
     # enabled:true                # Whether or not live-reload is enabled
     # additionalDirs:["views"]    # Additional directories outside the watch.compiledDir
                                   # that you would like to have trigger a page refresh,
                                   # like, by default, static views. Is string path,
-                                  # can be relative to project root, or absolute	
+                                  # can be relative to project root, or absolute
 
   # require:                 # configuration for requirejs options.
     # exclude:[]             # Regex or string paths. Paths can be absolute or relative to the
@@ -296,7 +296,7 @@ exports.config = {
                              #
                              # overrides can also be a function that takes mimosa-require's
                              # inferred config for each module. This allows the inferred config
-                             # to be updated and enhanced instead of just overridden.	
+                             # to be updated and enhanced instead of just overridden.
 
   # bower:                        # Configuration for bower module
     # watch: true                 # Whether or not to watch the bower.json file to automatically
@@ -365,7 +365,7 @@ exports.config = {
                                   # ['js', 'lib'] the output path would have "lib" and "js"
                                   # stripped. Feel free to suggest additions to this based on
                                   # your experience!
-	
+
 
   # clientJadeStatic:                     # settings for the client-jade-static module
     # context:{}                          # An object of data to be passed into jade compilation.
@@ -378,8 +378,8 @@ exports.config = {
     # extensionRegex: /.html.[a-zA-Z]+$/  # The regex to use to match jade files to be compiled
                                           # Files must still end in .jade or in whatever the
                                           # compiler override is for the jade compiler.
-    # prettyOutput: false                 # Indicates if the Jade compiler should output 
-                                          # pretty-indentation whitespace	
+    # prettyOutput: false                 # Indicates if the Jade compiler should output
+                                          # pretty-indentation whitespace
 
   # testemSimple:               # Configuration for the testem-simple module
     # configFile: "testem.json" # path from the root of the mimosa application to the testem
