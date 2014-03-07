@@ -1,0 +1,17 @@
+<div class="tables">
+    <div class="row">
+        <div class="small-4 columns tableMenu">
+            <h2>Tables</h2>
+            {{#each table in controller}}
+                {{#link-to "table" table class="panel small-6 columns"}}
+                    {{table.id}}
+                {{/link-to}}
+            {{/each}}
+        </div>
+
+        <div class="small-8 columns">
+            {{outlet}}
+        </div>
+
+    </div>
+</div>

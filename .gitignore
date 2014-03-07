@@ -1,0 +1,54 @@
+# Ignore npm packaging
+/.node_modules
+/node_modules
+
+# Ignore all logfiles and tempfiles.
+*.log
+/tmp
+
+## Ignore all generated files
+/coverage
+/rdoc
+/wiki
+/packaging
+npm-debug.log
+*.tmproj
+azure_error
+what
+*.sublime-workspace
+.idea/
+
+# Output folder
+/public
+/dist
+
+# Numerous always-ignore extensions
+*~
+*.diff
+*.patch
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+
+# ignore mimosa bower cache
+.mimosa/bower
+
+# bower pulls these in but project doesn't use them ...
+assets/javascripts/vendor/bower-assets/fastclick/
+assets/javascripts/vendor/bower-assets/foundation/
+assets/javascripts/vendor/bower-assets/jquery.cookie/

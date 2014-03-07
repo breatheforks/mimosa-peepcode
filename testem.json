@@ -1,0 +1,15 @@
+{
+  "test_page": "public/testrunner.html",
+  "routes": {
+    "/test": "public/"
+  },
+  "launch_in_dev": [
+    "Firefox",
+    "Chrome",
+    "PhantomJS",
+    "Safari"
+  ],
+  "launch_in_ci": [
+    "PhantomJS"
+  ]
+}

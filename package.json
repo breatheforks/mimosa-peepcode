@@ -1,0 +1,25 @@
+{
+  "name": "dryit",
+  "version": "0.0.5",
+  "homepage": "github",
+  "author": "N. Ben Cohen <ncohen@ucsd.edu>",
+  "description": "dryit",
+  "contributors": [
+    {
+      "name": "N. Ben Cohen",
+      "email": "ncohen@ucsd.edu"
+    }
+  ],
+  "private": true,
+  "dependencies": {
+    "consolidate": "~0.9.1",
+    "express": "~3.3.4",
+    "jade": "~0.35.0",
+    "coffee-script": "~1.6.2"
+  },
+
+  "devDependencies": {
+    "emblem": "0.3.11",
+    "handlebars": "1.3.0"
+  }
+}

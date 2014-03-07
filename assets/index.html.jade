@@ -1,0 +1,53 @@
+doctype 5
+html
+block vars
+    - var title="mimosa-ember-peepcode!"
+    - var isTestSuite=false
+    - var reload=true
+head
+    title #{title}
+
+    if isTestSuite
+        link(rel='stylesheet', href='./stylesheets/vendor/bower-assets/qunit/qunit.css')
+        link(rel='stylesheet', href='./stylesheets/app.qunit.css')
+
+    link(rel='stylesheet', href='stylesheets/vendor/bower-assets//foundation/foundation.css')
+    link(rel='stylesheet', href='stylesheets/style.css')
+
+body
+    if isTestSuite
+        div(id="qunit")
+        div(id="qunit-fixture")
+
+        // testing vendor libraries
+        script(src="javascripts/vendor/bower-assets/qunit/qunit.js")
+
+        // this is served by the testem http server and enables auto-reload and
+        // other features when running inside a testem captured browser
+        script(src="/testem.js")
+
+    if reload
+        script(src='socket.io/socket.io.js')
+        script(src='javascripts/reload-client.js')
+
+    // application dependencies
+    script(src='javascripts/vendor/bower-assets/jquery/jquery.js')
+    script(src='javascripts/vendor/bower-assets/handlebars/handlebars.js')
+    script(src='javascripts/vendor/bower-assets/ember/ember.js')
+    script(src='javascripts/vendor/bower-assets/ember-model/ember-model.js')
+
+    // application code
+    script(src='javascripts/app/handlebars-helpers.js')
+    script(src='javascripts/compiled-handlebars.js')
+    //script(src='javascripts/compiled-emblem.js')
+    script(src='javascripts/app/app.js')
+    script(src='javascripts/app/models.js')
+
+    if isTestSuite
+
+        // setup the testing environment with ember-specific helpers that can be run within tests
+        script(src="./javascripts/testing/support/test_helper.js")
+
+        // integration tests!!
+        script(src="./javascripts/testing/integration/tables_test.js")
+        script(src="./javascripts/testing/integration/tabs_test.js")
