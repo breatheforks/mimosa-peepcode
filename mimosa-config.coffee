@@ -4,7 +4,7 @@
 
 exports.config =
 
-  minMimosaVersion: "2.1.15"
+  minMimosaVersion: "2.1.17"
 
   # we use these mimosa modules
   modules: ['bower',
