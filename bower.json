@@ -2,9 +2,12 @@
   "name": "ember-mimosa-peepcode",
   "version": "0.0.2",
   "dependencies": {
-    "ember": "1.5.0",
+    "ember": "1.6.1",
     "ember-model": "~0.0.11",
     "qunit": "~1.14.*",
     "foundation": "*"
+  },
+  "resolutions": {
+    "ember": "1.6.1"
   }
 }

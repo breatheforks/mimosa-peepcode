@@ -1,33 +1,50 @@
-express =        require 'express'
-engines =        require 'consolidate'
-
-routes  =        require './routes'
+express = require 'express'
+bodyParser = require 'body-parser'
+engines = require 'consolidate'
+compression = require 'compression'
+favicon = require 'serve-favicon'
+cookieParser = require 'cookie-parser'
+errorHandler = require 'errorhandler'
+socketio = require 'socket.io'
 
 exports.startServer = (config, callback) ->
-
-  port = process.env.PORT or config.server.port
-
   app = express()
-  server = app.listen port, ->
-    console.log "Express server listening on port %d in %s mode", server.address().port, app.settings.env
 
-  app.configure ->
-    app.set 'port', port
-    app.set 'views', config.server.views.path
-    app.engine config.server.views.extension, engines[config.server.views.compileWith]
-    app.set 'view engine', config.server.views.extension
-    app.use express.favicon()
-    app.use express.bodyParser()
-    app.use express.methodOverride()
-    app.use express.compress()
-    app.use config.server.base, app.router
-    app.use express.static(config.watch.compiledDir)
+  # setup views and port
+  app.set 'views', config.server.views.path
+  app.engine config.server.views.extension, engines[config.server.views.compileWith]
+  app.set 'view engine', config.server.views.extension
+  app.set 'port', process.env.PORT || config.server.port || 3000
 
-  app.configure 'development', ->
-    app.use express.errorHandler()
+  # middleware
+  app.use compression()
+  # uncomment and point path at favicon if you have one
+  # app.use favicon "path to fav icon"
+  app.use bodyParser.json()
+  app.use bodyParser.urlencoded {extended: true}
+  app.use cookieParser()
+  app.use express.static config.watch.compiledDir
+  if app.get('env') is 'development'
+    app.use errorHandler()
 
-  # set up your express server routes here!
-  app.get '/example', routes.index(config)
+  routeOptions =
+    reload:    config.liveReload.enabled
+    optimize:  config.isOptimize ? false
+    cachebust: if process.env.NODE_ENV isnt "production" then "?b=#{(new Date()).getTime()}" else ''
 
-  callback(server)
+  router = express.Router()
+  router.get '/', (req, res) ->
 
+    name = if config.isOptimize then "index-optimize" else "index"
+    res.render name, routeOptions
+
+  # routes
+  app.use '/', router
+
+  # start it up
+  server = app.listen app.get('port'), ->
+    console.log 'Express server listening on port ' + app.get('port')
+
+  io = socketio.listen server
+
+  callback server, io
