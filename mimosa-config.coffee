@@ -73,8 +73,12 @@ exports.config =
       outRoot: "bower-assets"
       mainOverrides:
         qunit: ["qunit/qunit.js", "qunit/qunit.css"]
+
+        "semantic-ui": [
+          "build/packaged": "semantic-ui"
+        ]
     bowerDir:
-      clean: false
+      clean: true
     exclude:
       ["foundation/**.*.js"]
     forceLatest: true

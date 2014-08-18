@@ -1,17 +1,17 @@
-<div class="tables">
-    <div class="row">
-        <div class="small-4 columns tableMenu">
+<div class="ui fourteen column divided grid">
+    <div class="ui two column row">
+        <div class="ui three wide column tableMenu">
             <h2>Tables</h2>
-            {{#each table in controller}}
-                {{#link-to "table" table class="panel small-6 columns"}}
-                    {{table.id}}
-                {{/link-to}}
-            {{/each}}
+            <div class="ui center aligned two column grid">
+                {{#each table in controller}}
+                    <div class="ui column">
+                        {{#link-to "table" table class="panel"}}
+                            {{table.id}}
+                        {{/link-to}}
+                    </div>
+                {{/each}}
+            </div>
         </div>
-
-        <div class="small-8 columns">
-            {{outlet}}
-        </div>
-
+        {{outlet}}
     </div>
 </div>

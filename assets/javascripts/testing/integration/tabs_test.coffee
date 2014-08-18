@@ -9,7 +9,7 @@ test "Adding a pizza to table 1 should result in a change to tab1 but not to tab
   andThen () ->
      equal("1", find('.tab h2 span').text(), "navigating to table 1 should show table1 id in table selection pane")
 
-  click('.menu li:eq(0) > a')
+  click('.menu a:eq(0)')
   andThen () ->
     equal('Pizza$15.00', find('.tab li:eq(0) > h3').text(), "Clicking pizza item should add pizza to tab")
     equal('$15.00', find('.total span').text(), "Total price should reflect pizza addition")

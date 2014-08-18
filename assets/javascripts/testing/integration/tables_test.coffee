@@ -28,4 +28,4 @@ test "Clicking table 4 should show food menu with 5 choices and placeholder text
   visit('/tables/4')
   andThen () ->
     equal("4", find('.tab h2 span').text(), 'Table id 4 should be displayed in selected table pane')
-    equal(5, find('.menu li > a').length, "5 food options should be visible in food selection pane")
+    equal(5, find('.menu a').length, "5 food options should be visible in food selection pane")
